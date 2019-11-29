@@ -1,6 +1,7 @@
 const express = require('express');
 const bp = require('body-parser');
 const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
 app.use(bp.urlencoded({
@@ -29,9 +30,9 @@ app.post('/', (req, res) => {
   };
   axios({
       method: 'post',
-      url: 'https://us4.api.mailchimp.com/3.0/lists/5ee1e7cb43',
+      url: process.env.MAIL_URL + 'lists/' + process.env.LIST_ID,
       headers: {
-        'Authorization': 'anik 390dc43847488779d7d14c144f496fd6-us4'
+        'Authorization': 'anik ' + process.env.MAIL_API_KEY
       },
       data: JSON.stringify(data)
     })
