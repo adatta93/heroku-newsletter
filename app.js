@@ -53,6 +53,3 @@ app.post('/', (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => console.log('Server is running at 3000'));
-
-//mailchimp--- 390dc43847488779d7d14c144f496fd6-us4
-//list(audience) id--- 5ee1e7cb43
